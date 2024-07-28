@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql
+    container_name: db_test_riwi
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: riwi_test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    volumes:
+      - my-db:/var/lib/mysql
+    ports:
+      - "3307:3306"
+volumes:
+  my-db:
