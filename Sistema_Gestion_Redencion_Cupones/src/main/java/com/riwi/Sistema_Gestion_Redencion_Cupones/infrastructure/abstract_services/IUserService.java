@@ -2,7 +2,8 @@ package com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.abstract_servi
 
 import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.requests.UserRequest;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.responses.UserResponse;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities.User;
 
-public interface IUserService extends GenericService<UserRequest, UserResponse, Long>{
-    
+public interface IUserService extends GenericService<UserRequest, UserResponse, Long> {
+  User findUser(Long id);
 }
