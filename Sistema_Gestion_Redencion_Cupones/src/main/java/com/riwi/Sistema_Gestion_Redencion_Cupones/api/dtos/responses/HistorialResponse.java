@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
@@ -15,10 +16,11 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@SuperBuilder
 public class HistorialResponse {
     private Long id;
     private LocalDateTime redemptionDate;
-    private User user;
-    private Product product;
-    private Coupons coupon ;
+    private UserResponse user;
+    private ProductResponse product;
+    private CouponResponse coupons ;
 }
