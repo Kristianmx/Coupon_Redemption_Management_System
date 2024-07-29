@@ -24,5 +24,5 @@ public class Product {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "product",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private List<Product> products;
+    private List<Historial> historials;
 }

@@ -24,5 +24,5 @@ public class Coupons {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "coupons",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private List<Coupons> coupons;
+    private List<Historial> historials;
 }
