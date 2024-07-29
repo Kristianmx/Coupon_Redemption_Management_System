@@ -1,4 +1,4 @@
-package com.riwi.test.infrastructure.abstract_services;
+package com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.abstract_services;
 
 public interface GenericService<Request , Response, ID> {
     Response create(Request request);

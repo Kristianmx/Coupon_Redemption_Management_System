@@ -1,9 +1,9 @@
-package com.riwi.test.api.error_handler;
+package com.riwi.Sistema_Gestion_Redencion_Cupones.api.error_handler;
 
-import com.riwi.test.api.dtos.errors.ErrorResponse;
-import com.riwi.test.api.dtos.errors.ErrorsListResponse;
-import com.riwi.test.utils.exceptions.BadRequestException;
-import com.riwi.test.utils.exceptions.IdNotFoundException;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.errors.ErrorResponse;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.errors.ErrorsListResponse;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.utils.exceptions.BadRequestException;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.utils.exceptions.IdNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.support.MetaDataAccessException;
 import org.springframework.web.bind.MethodArgumentNotValidException;

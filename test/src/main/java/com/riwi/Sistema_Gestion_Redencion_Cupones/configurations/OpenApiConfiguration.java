@@ -1,4 +1,4 @@
-package com.riwi.test.configurations;
+package com.riwi.Sistema_Gestion_Redencion_Cupones.configurations;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;

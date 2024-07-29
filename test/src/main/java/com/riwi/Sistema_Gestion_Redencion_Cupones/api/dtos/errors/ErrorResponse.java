@@ -1,9 +1,8 @@
-package com.riwi.test.api.dtos.errors;
+package com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.errors;
 
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Map;
 
 @Getter
@@ -11,8 +10,8 @@ import java.util.Map;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ErrorsListResponse implements Serializable {
+public class ErrorResponse implements Serializable {
     private String status;
     private Integer code;
-    private List<Map<String,String>> errors;
+    private Map<String,String> error;
 }
