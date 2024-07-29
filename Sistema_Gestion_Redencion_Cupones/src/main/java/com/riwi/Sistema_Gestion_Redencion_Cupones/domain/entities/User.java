@@ -1,14 +1,9 @@
 package com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.List;
 
 @Entity(name = "user")
 @Data
@@ -27,6 +22,10 @@ public class User {
     @Column(length = 100, nullable = false, unique = true)
     private String email;
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Historial> historials;
 
-    
+
 }

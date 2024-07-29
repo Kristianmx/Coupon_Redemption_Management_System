@@ -1,17 +1,13 @@
 package com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities;
 
 import java.time.LocalDate;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.List;
+
+import jakarta.persistence.*;
+import lombok.*;
 
 @Data
-@Entity(name="cupoun")
+@Entity(name="coupons")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Coupons {
@@ -23,5 +19,10 @@ public class Coupons {
     @Column(length = 100, nullable = false)
     private Boolean status;
     @Column(length = 100, nullable = false)
-    private Double discount; 
+    private Double discount;
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "coupons",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Coupons> coupons;
 }

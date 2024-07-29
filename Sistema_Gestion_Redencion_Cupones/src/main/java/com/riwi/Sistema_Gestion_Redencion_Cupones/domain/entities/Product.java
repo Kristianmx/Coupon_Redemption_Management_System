@@ -4,6 +4,8 @@ package com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 
 @Entity(name = "product")
 @Getter
@@ -18,4 +20,9 @@ public class Product {
     private String name;
     @Column(nullable = false)
     private Double price;
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "product",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Product> products;
 }
