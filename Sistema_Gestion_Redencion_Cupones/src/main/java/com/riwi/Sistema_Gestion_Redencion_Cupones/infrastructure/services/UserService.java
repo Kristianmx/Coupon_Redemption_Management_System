@@ -62,10 +62,10 @@ public class UserService implements IUserService {
 
     private BadRequestException verifyUserInfo(String email, String username) {
         if (this.userRepository.findByUserName(username) != null) {
-            return new BadRequestException("This username is already taken");
+            throw  new BadRequestException ("This username is already taken");
         }
         if (this.userRepository.findByEmail(email) != null) {
-            return new BadRequestException("This email is already taken");
+            throw new BadRequestException("This email is already taken");
         }
         return null;
     }
