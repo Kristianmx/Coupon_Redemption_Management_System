@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -50,7 +51,8 @@ public class HistorialService implements IHistorialService {
     }
 
     @Override
-    public HistorialResponse get(Long aLong) {
+    public HistorialResponse get(Long Long) {
+
         return null;
     }
 
@@ -63,4 +65,14 @@ public class HistorialService implements IHistorialService {
     public void delete(Long aLong) {
 
     }
+
+    @Override
+    public List<HistorialResponse> findByUser(Long id) {
+        List<Historial> historials = this.historialRepository.findAllByUser_Id(id);
+        return this.historialMapper.toListResponse(historials);
+    }
+
+  
+
+
 }
