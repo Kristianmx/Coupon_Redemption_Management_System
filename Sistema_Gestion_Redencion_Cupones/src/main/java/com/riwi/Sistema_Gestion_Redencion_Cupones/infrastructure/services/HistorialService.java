@@ -12,6 +12,7 @@ import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.repositories.ProductRep
 import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.repositories.UserRepository;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.abstract_services.IHistorialService;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.helpers.mappers.HistorialMapper;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.utils.exceptions.BadRequestException;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.utils.exceptions.IdNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,15 +48,23 @@ public class HistorialService implements IHistorialService {
         historial.setStatus(true);
         historial.setRedemptionDate(LocalDateTime.now());
 
+        List<Historial> list = this.historialRepository.findAll();
+
+        list.forEach(his->{
+            if (his.getUser().getId() == historialRequest.getUserId()) {
+                if (his.getCoupons().getId() == historialRequest.getCuponId()) {
+                    throw new BadRequestException("This coupon has already been used");
+                }
+            }
+        });
+
         return this.historialMapper.toResponse(this.historialRepository.save(historial));
     }
 
     @Override
     public HistorialResponse get(Long Long) {
-
         return null;
     }
-
     @Override
     public HistorialResponse update(Long aLong, HistorialRequest historialRequest) {
         return null;
@@ -63,7 +72,6 @@ public class HistorialService implements IHistorialService {
 
     @Override
     public void delete(Long aLong) {
-
     }
 
     @Override

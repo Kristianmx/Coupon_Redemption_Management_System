@@ -18,8 +18,8 @@ import java.util.List;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface HistorialMapper extends GenericMapper<HistorialRequest, HistorialResponse, Historial> {
 
-    UserResponse toResponseUser(User user);
-    CouponResponse toResponseCoupon(Coupons coupons);
-
-    ProductResponse toResponseProduct(Product product);
+//    UserResponse toResponseUser(User user);
+    CouponResponse couponsToResponseCoupons(Coupons coupons);
+//
+//    ProductResponse toResponseProduct(Product product);
 }
