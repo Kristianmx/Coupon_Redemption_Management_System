@@ -11,12 +11,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/historial")
 @AllArgsConstructor
 public class HistorialController {
     @Autowired
     private final HistorialService historialService;
+
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<List<HistorialResponse>> get(@PathVariable Long id) {
+        return ResponseEntity.ok(this.historialService.findByUser(id));
+    }
 
     @PostMapping
     public ResponseEntity<HistorialResponse> create(@Validated @RequestBody HistorialRequest historialRequest){
