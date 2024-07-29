@@ -12,7 +12,7 @@ spring:
           lower-case-service-id: true
       routes:
         - id: clans_service
-          uri: lb://test
+          uri: http://192.168.20.19:14700
           predicates:
             - Path=/api/v1/tests/**
 server:
@@ -23,4 +23,4 @@ eureka:
   client:
     fetch-registry: true
     service-url:
-      defaultZone:  http://localhost:8761/eureka/
+      defaultZone: http://eurekaserver:8761/eureka/

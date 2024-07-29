@@ -16,7 +16,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
 server:
-  port: 0
+  port: 14700
   servlet:
     context-path: /api/v1
 

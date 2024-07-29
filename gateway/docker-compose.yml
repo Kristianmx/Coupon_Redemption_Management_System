@@ -1,0 +1,16 @@
+version: '3'
+services:
+  eurekaserver:
+    image: eureka
+    container_name: eurekaserver
+    ports:
+      - "8761:8761"
+  gateway:
+    image: gateway
+    container_name: gateway
+    ports:
+      - "2020:2020"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eurekaserver:8761/eureka/
+    depends_on:
+      - eurekaserver
