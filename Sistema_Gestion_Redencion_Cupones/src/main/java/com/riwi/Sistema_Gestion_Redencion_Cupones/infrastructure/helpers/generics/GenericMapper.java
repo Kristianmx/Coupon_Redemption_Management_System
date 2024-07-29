@@ -10,3 +10,4 @@ public interface GenericMapper<Request, Response, Entity> {
     List<Response> toListResponse(List<Entity> entityList);
 }
 
+
