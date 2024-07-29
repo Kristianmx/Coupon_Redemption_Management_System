@@ -14,7 +14,7 @@
     - Git flow and pull request management.
 - Miguel Angel Toro Pérez
     - Developer
-- Dayron Yeins Perez Ruiz 
+- Dayron Yeins Zapata Tabares 
     - Time management
 - Sara Camila Ruiz Arismendi
     - Database model
