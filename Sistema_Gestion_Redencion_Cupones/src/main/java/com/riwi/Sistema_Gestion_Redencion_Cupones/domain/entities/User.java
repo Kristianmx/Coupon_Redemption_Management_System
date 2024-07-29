@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.List;
 
+
 @Entity(name = "user")
 @Data
 @AllArgsConstructor
