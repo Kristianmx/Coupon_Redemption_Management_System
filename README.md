@@ -131,3 +131,9 @@ https://trello.com/b/WiljKA8y/employability-assessment
 5. Run the program from the code editor.
 6. Open Swagger using the following link: http://localhost:8080/api/v1/swagger-ui/index.html
 7. Select the query you wish to perform and enter data if necessary to test the program's functionality.
+
+##. Entity relationship diagram
+
+![imagen](https://github.com/user-attachments/assets/621be9f1-68d8-41bb-b411-44bde6a2a669)
+
+
