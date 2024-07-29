@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities.Coupons;
 
 @Repository
-public interface CouponsRepository extends JpaRepository<Coupons, Long> {
+public interface CouponRepository extends JpaRepository<Coupons, Long> {
     
 }
