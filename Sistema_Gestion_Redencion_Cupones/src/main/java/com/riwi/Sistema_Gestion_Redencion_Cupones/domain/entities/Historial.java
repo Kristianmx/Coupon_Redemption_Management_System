@@ -22,16 +22,16 @@ public class Historial {
     @Column(nullable = false)
     private Boolean status;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id",referencedColumnName = "id")
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id",referencedColumnName = "id")
     private Product product;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "coupons_id",referencedColumnName = "id")
-    private Coupon coupon;
+    private Coupons coupons ;
 
 }
