@@ -21,4 +21,17 @@ public class Historial {
     private LocalDateTime redemptionDate;
     @Column(nullable = false)
     private Boolean status;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id",referencedColumnName = "id")
+    private Product product;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "coupons_id",referencedColumnName = "id")
+    private Coupons coupon ;
+
 }
