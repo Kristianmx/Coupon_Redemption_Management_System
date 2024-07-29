@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SistemaGestionRedencionCuponesApplication<Sistema_Gestion_Redencion_Cupones>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.riwi.Sistema_Gestion_Redencion_Cupones.SistemaGestionRedencionCuponesApplication",
+            "projectName": "Sistema_Gestion_Redencion_Cupones",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
