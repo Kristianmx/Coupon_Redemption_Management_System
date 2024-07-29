@@ -5,9 +5,12 @@ import org.springframework.stereotype.Service;
 
 import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.requests.UserRequest;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.responses.UserResponse;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities.User;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.repositories.UserRepository;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.abstract_services.IUserService;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.helpers.mappers.UserMapper;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.utils.exceptions.BadRequestException;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.utils.exceptions.IdNotFoundException;
 
 import lombok.AllArgsConstructor;
 
@@ -23,26 +26,47 @@ public class UserService implements IUserService {
 
     @Override
     public UserResponse create(UserRequest request) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'create'");
+        this.verifyUserInfo(request.getEmail(), request.getUserName());
+
+        User user = userMapper.toEntity(request);
+        User createdUser = userRepository.save(user);
+        return userMapper.toResponse(createdUser);
     }
 
     @Override
     public UserResponse get(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        User user = findUser(id);
+        return userMapper.toResponse(user);
     }
 
     @Override
     public UserResponse update(Long id, UserRequest request) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        this.verifyUserInfo(request.getEmail(), request.getUserName());
+        User user = findUser(id);
+        User userToUpdate = this.userMapper.toEntity(request);
+        userToUpdate.setId(user.getId());
+
+        return this.userMapper.toResponse(this.userRepository.save(userToUpdate));
     }
 
     @Override
     public void delete(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        User user = findUser(id);
+        userRepository.delete(user);
     }
-    
+
+    @Override
+    public User findUser(Long id) {
+        return userRepository.findById(id).orElseThrow(() -> new IdNotFoundException("USER"));
+    }
+
+    private BadRequestException verifyUserInfo(String email, String username) {
+        if (this.userRepository.findByUserName(username) != null) {
+            return new BadRequestException("This username is already taken");
+        }
+        if (this.userRepository.findByEmail(email) != null) {
+            return new BadRequestException("This email is already taken");
+        }
+        return null;
+    }
 }

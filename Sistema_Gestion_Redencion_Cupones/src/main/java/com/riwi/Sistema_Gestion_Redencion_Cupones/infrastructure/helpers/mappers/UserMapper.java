@@ -7,7 +7,7 @@ import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.responses.UserRespons
 import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities.User;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.helpers.generics.GenericMapper;
 
-@Mapper(componentModel = "spring" )
+@Mapper(componentModel = "spring")
 public interface UserMapper extends GenericMapper<UserRequest, UserResponse, User> {
-    
+
 }
