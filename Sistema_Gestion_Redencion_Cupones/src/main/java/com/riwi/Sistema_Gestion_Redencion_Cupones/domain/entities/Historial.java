@@ -32,6 +32,6 @@ public class Historial {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "coupons_id",referencedColumnName = "id")
-    private Coupons coupon ;
+    private Coupon coupon;
 
 }

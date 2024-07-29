@@ -10,7 +10,7 @@ import lombok.*;
 @Entity(name="coupons")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Coupons {
+public class Coupon {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
@@ -24,5 +24,5 @@ public class Coupons {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "coupons",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private List<Coupons> coupons;
+    private List<Coupon> coupons;
 }
