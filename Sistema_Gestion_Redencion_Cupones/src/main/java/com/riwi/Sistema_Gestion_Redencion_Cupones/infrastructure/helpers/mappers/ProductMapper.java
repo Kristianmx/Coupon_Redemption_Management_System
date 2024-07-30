@@ -2,7 +2,6 @@ package com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.helpers.mapper
 
 import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.responses.ProductResponse;
 import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities.Product;
-import com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.helpers.generics.GenericMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 

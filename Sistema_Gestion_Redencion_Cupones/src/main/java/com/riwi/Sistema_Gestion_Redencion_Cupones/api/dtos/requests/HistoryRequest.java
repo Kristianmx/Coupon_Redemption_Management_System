@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class HistorialRequest {
+public class HistoryRequest {
     @NotNull(message = "User ID cannot be null")
     @Positive(message = "User ID must be a positive value")
     private Long userId;

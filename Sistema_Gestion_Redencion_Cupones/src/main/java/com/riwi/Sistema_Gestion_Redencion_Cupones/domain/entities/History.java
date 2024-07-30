@@ -8,12 +8,12 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "historial")
+@Entity(name = "history")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Historial {
+public class History {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

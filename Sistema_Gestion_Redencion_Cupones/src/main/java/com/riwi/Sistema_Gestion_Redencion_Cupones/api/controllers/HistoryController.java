@@ -1,8 +1,8 @@
 package com.riwi.Sistema_Gestion_Redencion_Cupones.api.controllers;
 
-import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.requests.HistorialRequest;
-import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.responses.HistorialResponse;
-import com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.services.HistorialService;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.requests.HistoryRequest;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.responses.HistoryResponse;
+import com.riwi.Sistema_Gestion_Redencion_Cupones.infrastructure.services.HistoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/historial")
+@RequestMapping("/histories")
 @AllArgsConstructor
-@Tag(name = "Historial Controller", description = "Controller for managing user history")
-public class HistorialController {
+@Tag(name = "History Controller", description = "Controller for managing user histories")
+public class HistoryController {
 
     @Autowired
-    private final HistorialService historialService;
+    private final HistoryService historyService;
 
     @Operation(summary = "Get user history by ID", description = "Retrieves the history records of a user based on their ID")
     @ApiResponses(value = {
@@ -31,8 +31,8 @@ public class HistorialController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping(path = "/{id}")
-    public ResponseEntity<List<HistorialResponse>> get(@PathVariable Long id) {
-        return ResponseEntity.ok(this.historialService.findByUser(id));
+    public ResponseEntity<List<HistoryResponse>> get(@PathVariable Long id) {
+        return ResponseEntity.ok(this.historyService.findByUser(id));
     }
 
     @Operation(summary = "Create a new history record", description = "Creates a new history record for a user")
@@ -42,7 +42,7 @@ public class HistorialController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PostMapping
-    public ResponseEntity<HistorialResponse> create(@Validated @RequestBody HistorialRequest historialRequest) {
-        return ResponseEntity.ok(this.historialService.create(historialRequest));
+    public ResponseEntity<HistoryResponse> create(@Validated @RequestBody HistoryRequest historyRequest) {
+        return ResponseEntity.ok(this.historyService.create(historyRequest));
     }
 }

@@ -15,7 +15,7 @@ public class Coupons {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Column(length = 100, nullable = false)
-    private LocalDate expired_date;
+    private LocalDate expiredDate;
     @Column(length = 100, nullable = false)
     private Boolean status;
     @Column(length = 100, nullable = false)
@@ -24,5 +24,5 @@ public class Coupons {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "coupons",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private List<Historial> historials;
+    private List<History> histories;
 }

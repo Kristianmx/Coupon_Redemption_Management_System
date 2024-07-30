@@ -1,9 +1,6 @@
 package com.riwi.Sistema_Gestion_Redencion_Cupones.api.dtos.responses;
 
 
-import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities.Coupons;
-import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities.Product;
-import com.riwi.Sistema_Gestion_Redencion_Cupones.domain.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class HistorialResponse {
+public class HistoryResponse {
     private Long id;
     private LocalDateTime redemptionDate;
     private UserResponse user;

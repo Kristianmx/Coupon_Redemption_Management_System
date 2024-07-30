@@ -26,7 +26,7 @@ public class User {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "user",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private List<Historial> historials;
+    private List<History> histories;
 
 
 }
