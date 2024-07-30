@@ -17,9 +17,9 @@ public class HistoryRequest {
     @NotNull(message = "User ID cannot be null")
     @Positive(message = "User ID must be a positive value")
     private Long userId;
-    @NotNull(message = "Cupon ID cannot be null")
-    @Positive(message = "Cupon ID must be a positive value")
-    private Long cuponId;
+    @NotNull(message = "Coupon ID cannot be null")
+    @Positive(message = "Coupon ID must be a positive value")
+    private Long couponId;
     @NotNull(message = "Product ID cannot be null")
     @Positive(message = "Product ID must be a positive value")
     private Long productsId;

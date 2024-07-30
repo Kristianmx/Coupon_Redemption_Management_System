@@ -15,12 +15,12 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CouponRequest {
-    
+
     @FutureOrPresent(message = "date is not valid")
-    private LocalDate expired_date;
+    private LocalDate expiredDate;
     @NotNull(message = "status is required")
     private Boolean status;
-    @NotBlank(message = "Coupons discount is required" )
+    @NotBlank(message = "Coupons discount is required")
     private Double discount;
-    
+
 }

@@ -12,11 +12,10 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CouponResponse {
-    
+
     private Long id;
-    private LocalDate expired_date;
+    private LocalDate expireDate;
     private Boolean status;
     private Double discount;
 
-    
 }

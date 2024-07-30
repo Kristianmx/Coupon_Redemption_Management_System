@@ -44,7 +44,7 @@ public class HistoryService implements IHistoryService {
                 .orElseThrow(() -> new IdNotFoundException("User"));
         Product product = this.productRepository.findById(historyRequest.getProductsId())
                 .orElseThrow(() -> new IdNotFoundException("Product"));
-        Coupons coupons = this.couponRepository.findById(historyRequest.getCuponId())
+        Coupons coupons = this.couponRepository.findById(historyRequest.getCouponId())
                 .orElseThrow(() -> new IdNotFoundException("Coupon"));
         history.setCoupons(coupons);
         history.setUser(user);
@@ -56,7 +56,7 @@ public class HistoryService implements IHistoryService {
 
         list.forEach(his -> {
             if (his.getUser().getId().equals(historyRequest.getUserId())
-                    && his.getCoupons().getId().equals(historyRequest.getCuponId())) {
+                    && his.getCoupons().getId().equals(historyRequest.getCouponId())) {
                 throw new BadRequestException("This coupon has already been used");
             }
 
