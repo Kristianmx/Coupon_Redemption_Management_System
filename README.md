@@ -68,7 +68,7 @@ https://trello.com/b/WiljKA8y/employability-assessment
 
 ---
 ## Link to deployed code
-https://coupon-redemption-management-system.onrender.com
+https://coupon-redemption-management-system.onrender.com/api/v1/swagger-ui/index.html#/
 
 ---
 ## Architecture diagram
